@@ -24,7 +24,7 @@ tests/end_to_end/test-project/*.yml
 
 # Dev project
 dev-project/.pipelinewise
-dev-project/.env
+#dev-project/.env
 dev-project/pipelinewise-config/*_test.yml*
 
 # Docker
@@ -33,7 +33,7 @@ dev-project/pipelinewise-config/*_test.yml*
 *.db
 .DS_Store
 venv
-env
+#env
 blog_old.md
 node_modules
 *.pyc
