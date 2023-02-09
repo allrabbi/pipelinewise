@@ -33,15 +33,15 @@ rm -rf /var/lib/apt/lists/* \
 
 # Build test databases
 
-tests/db/tap_mysql_db.sh
+#tests/db/tap_mysql_db.sh
 tests/db/tap_postgres_db.sh
 
-dev-project/mongo/init_rs.sh
-tests/db/tap_mongodb.sh
+#dev-project/mongo/init_rs.sh
+#tests/db/tap_mongodb.sh
 tests/db/target_postgres.sh
 
 # Install PipelineWise and connectors in the container
-make pipelinewise connectors -e pw_acceptlicenses=y -e pw_connector=target-snowflake,target-postgres,tap-mysql,tap-postgres,tap-mongodb,transform-field,tap-s3-csv
+make pipelinewise connectors -e pw_acceptlicenses=y -e pw_connector=target-postgres,tap-postgres
 if [[ $? != 0 ]]; then
     echo
     echo "ERROR: Docker container not started. Failed to install one or more PipelineWise components."
